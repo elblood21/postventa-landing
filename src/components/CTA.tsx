@@ -59,7 +59,7 @@ export const CTA = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.8, type: "spring" }}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm font-medium mb-12 backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.05)]"
         >
@@ -77,7 +77,7 @@ export const CTA = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           className="text-5xl md:text-7xl font-black text-white tracking-tight mb-10 flex flex-wrap justify-center gap-x-4 gap-y-2 [perspective:1000px]"
         >
           {words.map((word, index) => (
@@ -94,7 +94,7 @@ export const CTA = () => {
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ delay: 0.6, duration: 0.8 }}
           className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-16 font-light leading-relaxed"
         >
@@ -105,7 +105,7 @@ export const CTA = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full sm:w-auto"
         >

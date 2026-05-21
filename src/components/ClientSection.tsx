@@ -13,9 +13,14 @@ export const ClientSection = () => {
     <section className="py-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
-          <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em]">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em]"
+          >
             Nuestros clientes
-          </p>
+          </motion.p>
         </div>
 
         <div className="relative">

@@ -9,7 +9,8 @@ export const Hero = () => {
         {/* Lado Izquierdo: Imagen en forma personalizada */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9, x: -40 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative w-full aspect-[3/4] flex items-center justify-center order-2 lg:order-1 -mt-4 lg:-mt-24 overflow-visible"
         >
@@ -76,7 +77,8 @@ export const Hero = () => {
         <div className="flex flex-col order-1 lg:order-2 lg:-mt-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white text-gray-600 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm w-fit"
           >
@@ -86,7 +88,8 @@ export const Hero = () => {
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="text-4xl font-black tracking-tighter text-[#0A1128] mb-6 leading-[1.1]"
           >
@@ -96,7 +99,8 @@ export const Hero = () => {
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="text-base text-gray-500 max-w-lg mb-10 leading-relaxed font-medium"
           >
@@ -105,7 +109,8 @@ export const Hero = () => {
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >

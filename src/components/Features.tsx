@@ -29,7 +29,7 @@ export const Features = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-sm font-bold tracking-widest uppercase mb-6"
           >
             <Zap size={16} /> Potencia tu operación
@@ -37,7 +37,7 @@ export const Features = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight"
           >
@@ -53,7 +53,7 @@ export const Features = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             className="md:col-span-2 md:row-span-2 bg-white rounded-3xl p-8 md:p-10 border border-gray-200/60 shadow-xl shadow-gray-200/20 relative overflow-hidden group hover:border-brand-blue/30 transition-colors"
           >
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl -mr-32 -mt-32 transition-transform group-hover:scale-110" />
@@ -86,7 +86,7 @@ export const Features = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             className="md:col-span-2 bg-gradient-to-br from-brand-blue to-blue-900 rounded-3xl p-10 border border-transparent shadow-xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
@@ -106,7 +106,7 @@ export const Features = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-lg shadow-gray-200/10 hover:border-brand-orange/30 transition-colors flex flex-col justify-between"
           >
             <div>
@@ -125,7 +125,7 @@ export const Features = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
             className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-lg shadow-gray-200/10 hover:border-brand-blue/30 transition-colors flex flex-col justify-between"
           >
             <div>
