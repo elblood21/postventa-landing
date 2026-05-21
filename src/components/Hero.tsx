@@ -13,8 +13,8 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative w-full aspect-[3/4] flex items-center justify-center order-2 lg:order-1 -mt-10 lg:-mt-24"
         >
-          {/* Forma abstracta detrás que se extiende hacia la izquierda (subida) */}
-          <div className="absolute -top-40 bottom-10 -left-[500rem] right-0 bg-gradient-to-tr from-brand-blue/20 to-brand-orange/20 rounded-r-[3rem] rotate-[15deg] blur-3xl" />
+          {/* Fade azul horizontal detrás del dispositivo */}
+          <div className="absolute inset-y-0 -left-[100vw] right-0 bg-gradient-to-r from-brand-blue/10 via-brand-blue/5 to-transparent pointer-events-none" />
           
           {/* App Skeleton en rectangulo redondeado inclinado */}
           <div className="relative w-[75%] h-[75%] overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl rotate-[-20deg] origin-bottom-right bg-gray-50 flex flex-col">
@@ -66,7 +66,7 @@ export const Hero = () => {
           </div>
 
           {/* Overlay de gradiente blanco sobre TODO (forma y dispositivo) */}
-          <div className="absolute -bottom-10 -left-20 right-0 h-64 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-20" />
+          <div className="absolute -bottom-[5.25rem] -left-[100vw] right-0 h-[25.75rem] bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-20" />
         </motion.div>
 
         {/* Lado Derecho: Contenido Textual */}
