@@ -109,9 +109,10 @@ export const CTA = () => {
           transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full sm:w-auto"
         >
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <a 
+            href="https://dev.postventa.net/registro"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-brand-orange text-white font-bold rounded-full overflow-hidden w-full sm:w-auto shadow-[0_0_40px_rgba(243,112,33,0.3)]"
           >
             <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out rounded-full" />
@@ -123,7 +124,7 @@ export const CTA = () => {
             >
               <ArrowRight size={20} />
             </motion.div>
-          </motion.button>
+          </a>
           
           <motion.button 
             whileHover={{ backgroundColor: "rgba(255,255,255,0.1)", scale: 1.05 }}

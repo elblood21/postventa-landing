@@ -114,10 +114,15 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <button className="bg-[#0A1128] text-white px-6 py-3 rounded-lg font-bold text-base hover:bg-brand-blue transition-colors flex items-center justify-center gap-2 group w-full sm:w-auto">
+            <a 
+              href="https://dev.postventa.net/registro" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#0A1128] text-white px-6 py-3 rounded-lg font-bold text-base hover:bg-brand-blue transition-colors flex items-center justify-center gap-2 group w-full sm:w-auto"
+            >
               Comenzar ahora 
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <button className="bg-white text-[#0A1128] border border-gray-200 px-6 py-3 rounded-lg font-bold text-base hover:border-gray-300 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto shadow-sm">
               <PlayCircle size={18} className="text-brand-orange" />
               Ver video demo

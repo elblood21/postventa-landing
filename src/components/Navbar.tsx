@@ -38,15 +38,18 @@ export const Navbar = () => {
 
         <AnimatePresence>
           {scrolled && (
-            <motion.button 
+            <motion.a 
+              href="https://dev.postventa.net/registro"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8, x: 20 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0.8, x: 20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="bg-brand-blue text-white px-4 py-2 rounded-full text-[13px] font-semibold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20"
+              className="bg-brand-blue text-white px-4 py-2 rounded-full text-[13px] font-semibold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20 flex items-center justify-center"
             >
               Comenzar ahora
-            </motion.button>
+            </motion.a>
           )}
         </AnimatePresence>
       </div>
