@@ -27,7 +27,7 @@ export const Features = () => {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[280px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-auto md:auto-rows-[280px]">
           
           {/* Card 1: Large Feature */}
           <motion.div 
@@ -35,21 +35,21 @@ export const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-2 md:row-span-2 bg-white rounded-3xl p-10 border border-gray-200/60 shadow-xl shadow-gray-200/20 relative overflow-hidden group hover:border-brand-blue/30 transition-colors"
+            className="md:col-span-2 md:row-span-2 bg-white rounded-3xl p-8 md:p-10 border border-gray-200/60 shadow-xl shadow-gray-200/20 relative overflow-hidden group hover:border-brand-blue/30 transition-colors"
           >
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl -mr-32 -mt-32 transition-transform group-hover:scale-110" />
             
             <div className="relative z-10 h-full flex flex-col">
-              <div className="w-14 h-14 bg-brand-blue rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-brand-blue/30">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-brand-blue rounded-2xl flex items-center justify-center text-white mb-6 md:mb-8 shadow-lg shadow-brand-blue/30">
                 <LayoutDashboard size={28} />
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Gestión Centralizada</h3>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-sm mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Gestión Centralizada</h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-sm mb-8">
                 Visualiza el estado de cada solicitud, coordina equipos y comunícate con los propietarios desde un panel de control intuitivo.
               </p>
               
               {/* Fake UI Element */}
-              <div className="mt-auto w-full h-32 bg-gray-50 rounded-xl border border-gray-100 overflow-hidden relative shadow-inner">
+              <div className="mt-auto w-full h-28 md:h-32 bg-gray-50 rounded-xl border border-gray-100 overflow-hidden relative shadow-inner">
                 <div className="absolute top-4 left-4 right-4 h-4 bg-gray-200 rounded animate-pulse w-1/3" />
                 <div className="absolute top-12 left-4 right-4 h-16 bg-white rounded-lg border border-gray-100 flex items-center px-4 gap-4">
                    <div className="w-8 h-8 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange"><Clock size={16} /></div>
