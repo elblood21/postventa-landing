@@ -1,0 +1,56 @@
+import { motion } from 'framer-motion';
+
+const clients = [
+  { name: 'Inmobiliaria Miramar', logo: 'https://postventa.cl/wp-content/uploads/2020/08/cliente01-300x300-1.png', url: 'https://app.postventa.cl/miramar/gestionempresa' },
+  { name: 'Constructora SW', logo: 'https://postventa.cl/wp-content/uploads/2023/03/constructora_sw.png', url: 'https://constructorasw.postventa.net/' },
+  { name: 'Qualsot', logo: 'https://postventa.cl/wp-content/uploads/2020/07/logo-qualsot-redondo.jpg', url: 'https://www.qualsot.com' },
+  { name: 'Grupo Arenas', logo: 'https://postventa.cl/wp-content/uploads/2025/08/grupoarenas.png', url: 'https://admin.postventa.net/' },
+  { name: 'Constructora RC', logo: 'https://postventa.cl/wp-content/uploads/2021/04/cliente05-300x300-1.png', url: 'https://app.postventa.cl/constructorarc/gestionempresa' },
+];
+
+export const ClientSection = () => {
+  return (
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em]">
+            Nuestros clientes
+          </p>
+        </div>
+
+        <div className="relative">
+          <div className="flex overflow-hidden group">
+            <motion.div 
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              className="flex flex-nowrap gap-16 md:gap-24 items-center whitespace-nowrap py-8"
+            >
+              {[...clients, ...clients].map((client, i) => (
+                <a 
+                  key={i}
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center min-w-[200px] group/item transition-transform duration-500 hover:scale-110"
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={`Logo ${client.name}`} 
+                    className="h-20 md:h-24 w-auto object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500"
+                  />
+                  <span className="mt-2 text-[11px] font-bold text-gray-400 uppercase tracking-widest opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                    {client.name}
+                  </span>
+                </a>
+              ))}
+            </motion.div>
+          </div>
+          
+          {/* Suaves gradientes blancos a los lados para difuminar */}
+          <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        </div>
+      </div>
+    </section>
+  );
+};
