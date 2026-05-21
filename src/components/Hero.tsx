@@ -11,52 +11,58 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.9, x: -40 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative w-full aspect-[3/4] flex items-center justify-center order-2 lg:order-1 -mt-10 lg:-mt-24"
+          className="relative w-full aspect-[3/4] flex items-center justify-center order-2 lg:order-1 -mt-4 lg:-mt-24 overflow-visible"
         >
-          {/* Fade azul horizontal detrás del dispositivo */}
-          <div className="absolute inset-y-0 -left-[100vw] right-0 bg-gradient-to-r from-brand-blue/10 via-brand-blue/5 to-transparent pointer-events-none" />
+          {/* Contenedor de recortes para los gradientes infinitos */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden lg:overflow-visible">
+            {/* Fade azul horizontal detrás del dispositivo */}
+            <div className="absolute inset-y-0 -left-[100vw] right-0 bg-gradient-to-r from-brand-blue/10 via-brand-blue/5 to-transparent" />
+            
+            {/* Overlay de gradiente blanco sobre TODO (forma y dispositivo) */}
+            <div className="absolute -bottom-[5.25rem] -left-[100vw] right-0 h-[25.75rem] bg-gradient-to-t from-white via-white/80 to-transparent z-20" />
+          </div>
           
           {/* App Skeleton en rectangulo redondeado inclinado */}
-          <div className="relative w-[75%] h-[75%] overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl rotate-[-20deg] origin-bottom-right bg-gray-50 flex flex-col">
+          <div className="relative w-[85%] md:w-[75%] h-[70%] md:h-[75%] overflow-hidden rounded-[2rem] md:rounded-[2.5rem] border-4 md:border-8 border-white shadow-2xl rotate-[-15deg] md:rotate-[-20deg] origin-center md:origin-bottom-right bg-gray-50 flex flex-col z-10">
               
               {/* Topbar skeleton */}
-              <div className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 shadow-sm shrink-0">
-                <div className="w-24 h-4 bg-gray-200 rounded-full animate-pulse" />
-                <div className="flex gap-3">
-                  <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse" />
-                  <div className="w-8 h-8 bg-brand-blue/30 rounded-full animate-pulse" />
+              <div className="h-12 md:h-16 bg-white border-b border-gray-100 flex items-center justify-between px-4 md:px-6 shadow-sm shrink-0">
+                <div className="w-20 md:w-24 h-3 md:h-4 bg-gray-200 rounded-full animate-pulse" />
+                <div className="flex gap-2 md:gap-3">
+                  <div className="w-6 h-6 md:w-8 md:h-8 bg-gray-200 rounded-full animate-pulse" />
+                  <div className="w-6 h-6 md:w-8 md:h-8 bg-brand-blue/30 rounded-full animate-pulse" />
                 </div>
               </div>
 
               {/* Main Content Area */}
-              <div className="flex-1 flex p-6 gap-6 overflow-hidden">
+              <div className="flex-1 flex p-4 md:p-6 gap-4 md:gap-6 overflow-hidden">
                 {/* Sidebar */}
-                <div className="w-16 flex flex-col gap-3 shrink-0">
+                <div className="w-12 md:w-16 flex flex-col gap-2 md:gap-3 shrink-0">
                   {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="w-full h-12 bg-white rounded-xl border border-gray-100 shadow-sm animate-pulse" />
+                    <div key={i} className="w-full h-8 md:h-12 bg-white rounded-lg md:rounded-xl border border-gray-100 shadow-sm animate-pulse" />
                   ))}
                 </div>
                 
                 {/* Dashboard Grid */}
-                <div className="flex-1 flex flex-col gap-6">
-                   <div className="flex gap-4 shrink-0">
-                     <div className="flex-1 h-28 bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col justify-between">
-                       <div className="w-12 h-3 bg-brand-orange/40 rounded-full animate-pulse" />
-                       <div className="w-20 h-6 bg-gray-200 rounded-full animate-pulse" />
+                <div className="flex-1 flex flex-col gap-4 md:gap-6">
+                   <div className="flex gap-3 md:gap-4 shrink-0">
+                     <div className="flex-1 h-20 md:h-28 bg-white rounded-xl md:rounded-2xl border border-gray-100 shadow-sm p-3 md:p-5 flex flex-col justify-between">
+                       <div className="w-10 h-2 md:h-3 bg-brand-orange/40 rounded-full animate-pulse" />
+                       <div className="w-16 h-4 md:h-6 bg-gray-200 rounded-full animate-pulse" />
                      </div>
-                     <div className="flex-1 h-28 bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col justify-between">
-                       <div className="w-12 h-3 bg-brand-blue/40 rounded-full animate-pulse" />
-                       <div className="w-24 h-6 bg-gray-200 rounded-full animate-pulse" />
+                     <div className="flex-1 h-20 md:h-28 bg-white rounded-xl md:rounded-2xl border border-gray-100 shadow-sm p-3 md:p-5 flex flex-col justify-between">
+                       <div className="w-10 h-2 md:h-3 bg-brand-blue/40 rounded-full animate-pulse" />
+                       <div className="w-20 h-4 md:h-6 bg-gray-200 rounded-full animate-pulse" />
                      </div>
                    </div>
                    
-                   <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col gap-5 overflow-hidden">
-                      <div className="w-32 h-4 bg-gray-200 rounded-full animate-pulse mb-1" />
+                   <div className="flex-1 bg-white rounded-xl md:rounded-2xl border border-gray-100 shadow-sm p-4 md:p-6 flex flex-col gap-3 md:gap-5 overflow-hidden">
+                      <div className="w-24 h-3 md:h-4 bg-gray-200 rounded-full animate-pulse mb-1" />
                       {[1, 2, 3, 4, 5].map(i => (
-                        <div key={i} className="w-full h-12 bg-gray-50 rounded-xl flex items-center px-4 gap-4 shrink-0">
-                           <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse shrink-0" />
-                           <div className="flex-1 h-3 bg-gray-200 rounded-full animate-pulse" />
-                           <div className="w-16 h-3 bg-brand-blue/20 rounded-full animate-pulse" />
+                        <div key={i} className="w-full h-8 md:h-12 bg-gray-50 rounded-lg md:rounded-xl flex items-center px-3 md:px-4 gap-3 md:gap-4 shrink-0">
+                           <div className="w-6 h-6 md:w-8 md:h-8 bg-gray-200 rounded-full animate-pulse shrink-0" />
+                           <div className="flex-1 h-2 md:h-3 bg-gray-200 rounded-full animate-pulse" />
+                           <div className="w-12 h-2 md:h-3 bg-brand-blue/20 rounded-full animate-pulse" />
                         </div>
                       ))}
                    </div>
@@ -64,9 +70,6 @@ export const Hero = () => {
               </div>
 
           </div>
-
-          {/* Overlay de gradiente blanco sobre TODO (forma y dispositivo) */}
-          <div className="absolute -bottom-[5.25rem] -left-[100vw] right-0 h-[25.75rem] bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-20" />
         </motion.div>
 
         {/* Lado Derecho: Contenido Textual */}
