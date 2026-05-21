@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Smartphone, Users, ClipboardCheck, Calendar, BarChart3, Zap, Clock } from 'lucide-react';
+import { Smartphone, Users, ClipboardCheck, Calendar, BarChart3, Zap } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -152,7 +152,7 @@ export const Features = () => {
             <motion.div variants={itemVariants} className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-700 mb-6">
               <BarChart3 size={20} />
             </motion.div>
-            <motion.h3 variants={itemVariants} className="text-lg font-bold text-gray-900 mb-3">Smart Data</motion.h3>
+            <motion.h3 variants={itemVariants} className="text-lg font-bold text-gray-900 mb-3">Indicadores operacionales</motion.h3>
             <motion.p variants={itemVariants} className="text-gray-500 text-sm leading-relaxed">
               Analiza indicadores por área y evita repetir errores en tus futuros proyectos.
             </motion.p>
@@ -166,16 +166,13 @@ export const Features = () => {
             viewport={{ once: false, margin: "-50px" }}
             className="md:col-span-2 lg:col-span-2 bg-gray-900 rounded-3xl p-8 border border-white/10 shadow-2xl relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:scale-110 transition-transform">
-              <Clock size={80} className="text-brand-orange" />
-            </div>
             <div className="relative z-10 h-full flex flex-col justify-center">
               <motion.div variants={itemVariants} className="w-10 h-10 bg-brand-orange/20 rounded-xl flex items-center justify-center text-brand-orange mb-4">
                 <Zap size={20} />
               </motion.div>
-              <motion.h3 variants={itemVariants} className="text-xl font-bold text-white mb-2">Eficiencia Real</motion.h3>
+              <motion.h3 variants={itemVariants} className="text-xl font-bold text-white mb-2">Eficiencia real</motion.h3>
               <motion.p variants={itemVariants} className="text-gray-400 text-sm max-w-xs">
-                Elimina formularios web tediosos. Reduce tiempos operativos hasta en un 60%.
+                Elimina la molestia de preparar y enviar reclamos por mail o formularios web tediosos.
               </motion.p>
             </div>
           </motion.div>
