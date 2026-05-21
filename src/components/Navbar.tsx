@@ -1,7 +1,24 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './Logo';
 
 export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Mostrar el botón después de scrollear 300px
+      if (window.scrollY > 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -19,9 +36,19 @@ export const Navbar = () => {
           <a href="#contact" className="hover:text-brand-blue transition-colors">Contacto</a>
         </div>
 
-        <button className="bg-brand-blue text-white px-4 py-2 rounded-full text-[13px] font-semibold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20">
-          Comenzar ahora
-        </button>
+        <AnimatePresence>
+          {scrolled && (
+            <motion.button 
+              initial={{ opacity: 0, scale: 0.8, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.8, x: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="bg-brand-blue text-white px-4 py-2 rounded-full text-[13px] font-semibold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20"
+            >
+              Comenzar ahora
+            </motion.button>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );
