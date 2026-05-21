@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { LayoutDashboard, Smartphone, ShieldCheck, BarChart3, Clock, Zap } from 'lucide-react';
+import { Smartphone, Users, ClipboardCheck, Calendar, BarChart3, Zap, Clock } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15
+      staggerChildren: 0.1
     }
   }
 };
@@ -39,102 +39,143 @@ export const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight"
+            className="text-3xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight"
           >
-            Todo el control en <br className="hidden md:block" /> un solo lugar
+            ¿Qué puede hacer <br className="hidden md:block" /> Postventa por ti?
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-500 max-w-2xl mx-auto text-lg"
+          >
+            La única plataforma que combina reducción de costos, ahorro de tiempo y satisfacción total del propietario.
+          </motion.p>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-auto md:auto-rows-[280px]">
+        {/* Bento Grid Layout - Expanded for 6 items */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-auto md:auto-rows-[300px]">
           
-          {/* Card 1: Large Feature */}
+          {/* Card 1: Ordena tus Reclamos (Large) */}
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-            className="md:col-span-2 md:row-span-2 bg-white rounded-3xl p-8 md:p-10 border border-gray-200/60 shadow-xl shadow-gray-200/20 relative overflow-hidden group hover:border-brand-blue/30 transition-colors"
+            viewport={{ once: false, margin: "-50px" }}
+            className="md:col-span-3 md:row-span-2 bg-white rounded-3xl p-8 md:p-10 border border-gray-200/60 shadow-xl shadow-gray-200/20 relative overflow-hidden group hover:border-brand-blue/30 transition-colors"
           >
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl -mr-32 -mt-32 transition-transform group-hover:scale-110" />
-            
             <div className="relative z-10 h-full flex flex-col">
-              <motion.div variants={itemVariants} className="w-12 h-12 md:w-14 md:h-14 bg-brand-blue rounded-2xl flex items-center justify-center text-white mb-6 md:mb-8 shadow-lg shadow-brand-blue/30">
-                <LayoutDashboard size={28} />
+              <motion.div variants={itemVariants} className="w-12 h-12 bg-brand-blue rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-brand-blue/30">
+                <ClipboardCheck size={24} />
               </motion.div>
-              <motion.h3 variants={itemVariants} className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Gestión Centralizada</motion.h3>
-              <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-600 leading-relaxed max-w-sm mb-8">
-                Visualiza el estado de cada solicitud, coordina equipos y comunícate con los propietarios desde un panel de control intuitivo.
+              <motion.h3 variants={itemVariants} className="text-2xl font-bold text-gray-900 mb-4">Ordena tus Reclamos</motion.h3>
+              <motion.p variants={itemVariants} className="text-base text-gray-600 leading-relaxed max-w-sm mb-8">
+                Carga fotos, videos y documentos al instante. Automatiza la burocracia y genera reportes para volver a enfocarte en liderar tu negocio.
               </motion.p>
-              
-              {/* Fake UI Element */}
-              <motion.div variants={itemVariants} className="mt-auto w-full h-28 md:h-32 bg-gray-50 rounded-xl border border-gray-100 overflow-hidden relative shadow-inner">
-                <div className="absolute top-4 left-4 right-4 h-4 bg-gray-200 rounded animate-pulse w-1/3" />
-                <div className="absolute top-12 left-4 right-4 h-16 bg-white rounded-lg border border-gray-100 flex items-center px-4 gap-4">
-                   <div className="w-8 h-8 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange"><Clock size={16} /></div>
-                   <div className="space-y-2 flex-1">
-                     <div className="h-2 bg-gray-200 rounded w-1/2" />
-                     <div className="h-2 bg-gray-100 rounded w-1/4" />
-                   </div>
-                </div>
+              {/* UI Skeleton */}
+              <motion.div variants={itemVariants} className="mt-auto w-full h-32 bg-gray-50 rounded-xl border border-gray-100 overflow-hidden relative p-4 flex flex-col gap-3">
+                 <div className="h-2 w-1/3 bg-gray-200 rounded-full animate-pulse" />
+                 <div className="flex gap-2">
+                   <div className="w-10 h-10 bg-white border border-gray-100 rounded-lg animate-pulse" />
+                   <div className="w-10 h-10 bg-white border border-gray-100 rounded-lg animate-pulse" />
+                   <div className="w-10 h-10 bg-white border border-gray-100 rounded-lg animate-pulse" />
+                 </div>
+                 <div className="h-6 w-full bg-brand-orange/10 rounded-lg border border-brand-orange/20 mt-auto" />
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Card 2 */}
+          {/* Card 2: Portal de Clientes (Wide) */}
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-            className="md:col-span-2 bg-gradient-to-br from-brand-blue to-blue-900 rounded-3xl p-10 border border-transparent shadow-xl relative overflow-hidden group"
+            viewport={{ once: false, margin: "-50px" }}
+            className="md:col-span-3 bg-gradient-to-br from-brand-blue to-blue-900 rounded-3xl p-8 border border-transparent shadow-xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
-            <div className="relative z-10">
+            <div className="relative z-10 h-full flex flex-col justify-center">
               <motion.div variants={itemVariants} className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 backdrop-blur-md">
-                <Smartphone size={24} />
+                <Users size={24} />
               </motion.div>
-              <motion.h3 variants={itemVariants} className="text-2xl font-bold text-white mb-3">Portal de Clientes</motion.h3>
-              <motion.p variants={itemVariants} className="text-blue-100 leading-relaxed">
-                Tus clientes pueden cargar evidencias, revisar el estado de sus solicitudes y firmar documentos desde su celular, 100% online.
+              <motion.h3 variants={itemVariants} className="text-2xl font-bold text-white mb-3">Portal del Propietario</motion.h3>
+              <motion.p variants={itemVariants} className="text-blue-100 leading-relaxed max-w-md">
+                Transparencia 24/7. Tus clientes siguen sus solicitudes en tiempo real y acceden a toda la documentación de su propiedad desde un solo lugar.
               </motion.p>
             </div>
           </motion.div>
 
-          {/* Card 3 */}
+          {/* Card 3: Atención Remota (Square) */}
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-            className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-lg shadow-gray-200/10 hover:border-brand-orange/30 transition-colors flex flex-col justify-between"
+            viewport={{ once: false, margin: "-50px" }}
+            className="md:col-span-1.5 lg:col-span-1 bg-white rounded-3xl p-8 border border-gray-200/60 shadow-lg hover:border-brand-orange/30 transition-colors"
           >
-            <div>
-              <motion.div variants={itemVariants} className="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center text-brand-orange mb-6">
-                <BarChart3 size={24} />
-              </motion.div>
-              <motion.h3 variants={itemVariants} className="text-xl font-bold text-gray-900 mb-3">Métricas en Vivo</motion.h3>
-              <motion.p variants={itemVariants} className="text-gray-600 text-sm leading-relaxed">
-                Genera reportes automáticos y descubre qué fallas se repiten para no cometer los mismos errores en futuros proyectos.
-              </motion.p>
-            </div>
+            <motion.div variants={itemVariants} className="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-brand-orange mb-6">
+              <Smartphone size={20} />
+            </motion.div>
+            <motion.h3 variants={itemVariants} className="text-lg font-bold text-gray-900 mb-3">Atención Digital</motion.h3>
+            <motion.p variants={itemVariants} className="text-gray-500 text-sm leading-relaxed">
+              Verifica garantías de forma remota y coordina soluciones sin traslados innecesarios.
+            </motion.p>
           </motion.div>
 
-          {/* Card 4 */}
+          {/* Card 4: Coordinación (Square) */}
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-            className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-lg shadow-gray-200/10 hover:border-brand-blue/30 transition-colors flex flex-col justify-between"
+            viewport={{ once: false, margin: "-50px" }}
+            className="md:col-span-1.5 lg:col-span-1 bg-white rounded-3xl p-8 border border-gray-200/60 shadow-lg hover:border-brand-blue/30 transition-colors"
           >
-            <div>
-              <motion.div variants={itemVariants} className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-blue mb-6">
-                <ShieldCheck size={24} />
+            <motion.div variants={itemVariants} className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-brand-blue mb-6">
+              <Calendar size={20} />
+            </motion.div>
+            <motion.h3 variants={itemVariants} className="text-lg font-bold text-gray-900 mb-3">Control de Equipos</motion.h3>
+            <motion.p variants={itemVariants} className="text-gray-500 text-sm leading-relaxed">
+              Gestiona el calendario de inspección y asigna tareas a técnicos o contratistas.
+            </motion.p>
+          </motion.div>
+
+          {/* Card 5: Indicadores (Square/Wide) */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-50px" }}
+            className="md:col-span-1 lg:col-span-1 bg-white rounded-3xl p-8 border border-gray-200/60 shadow-lg hover:border-brand-orange/30 transition-colors"
+          >
+            <motion.div variants={itemVariants} className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-700 mb-6">
+              <BarChart3 size={20} />
+            </motion.div>
+            <motion.h3 variants={itemVariants} className="text-lg font-bold text-gray-900 mb-3">Smart Data</motion.h3>
+            <motion.p variants={itemVariants} className="text-gray-500 text-sm leading-relaxed">
+              Analiza indicadores por área y evita repetir errores en tus futuros proyectos.
+            </motion.p>
+          </motion.div>
+
+          {/* Card 6: Ahorro (Wide) */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-50px" }}
+            className="md:col-span-2 lg:col-span-2 bg-gray-900 rounded-3xl p-8 border border-white/10 shadow-2xl relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:scale-110 transition-transform">
+              <Clock size={80} className="text-brand-orange" />
+            </div>
+            <div className="relative z-10 h-full flex flex-col justify-center">
+              <motion.div variants={itemVariants} className="w-10 h-10 bg-brand-orange/20 rounded-xl flex items-center justify-center text-brand-orange mb-4">
+                <Zap size={20} />
               </motion.div>
-              <motion.h3 variants={itemVariants} className="text-xl font-bold text-gray-900 mb-3">Seguridad Total</motion.h3>
-              <motion.p variants={itemVariants} className="text-gray-600 text-sm leading-relaxed">
-                Toda la información y documentación de tus proyectos centralizada y respaldada bajo altos estándares de seguridad.
+              <motion.h3 variants={itemVariants} className="text-xl font-bold text-white mb-2">Eficiencia Real</motion.h3>
+              <motion.p variants={itemVariants} className="text-gray-400 text-sm max-w-xs">
+                Elimina formularios web tediosos. Reduce tiempos operativos hasta en un 60%.
               </motion.p>
             </div>
           </motion.div>
@@ -144,4 +185,3 @@ export const Features = () => {
     </section>
   );
 };
-
