@@ -31,12 +31,12 @@ export const ClientSection = () => {
                   href={client.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center min-w-[200px] group/item transition-transform duration-500 hover:scale-110"
+                  className="flex flex-col items-center justify-center min-w-[250px] group/item transition-transform duration-500 hover:scale-110"
                 >
                   <img 
                     src={client.logo} 
                     alt={`Logo ${client.name}`} 
-                    className="h-20 md:h-24 w-auto object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500"
+                    className="h-28 md:h-36 w-auto object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500"
                   />
                   <span className="mt-2 text-[11px] font-bold text-gray-400 uppercase tracking-widest opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                     {client.name}
