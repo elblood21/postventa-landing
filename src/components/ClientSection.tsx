@@ -10,9 +10,9 @@ const clients = [
 
 export const ClientSection = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em]">
             Nuestros clientes
           </p>
@@ -23,7 +23,7 @@ export const ClientSection = () => {
             <motion.div 
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              className="flex flex-nowrap gap-8 md:gap-24 items-center whitespace-nowrap py-8"
+              className="flex flex-nowrap gap-8 md:gap-24 items-center whitespace-nowrap py-4"
             >
               {[...clients, ...clients].map((client, i) => (
                 <a 
@@ -31,12 +31,12 @@ export const ClientSection = () => {
                   href={client.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center min-w-[180px] md:min-w-[250px] group/item transition-transform duration-500 hover:scale-110"
+                  className="flex flex-col items-center justify-center min-w-[180px] md:min-w-[280px] group/item transition-transform duration-500 hover:scale-110"
                 >
                   <img 
                     src={client.logo} 
                     alt={`Logo ${client.name}`} 
-                    className="h-28 md:h-36 w-auto object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500"
+                    className="h-32 md:h-44 w-auto object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500"
                   />
                   <span className="mt-2 text-[11px] font-bold text-gray-400 uppercase tracking-widest opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                     {client.name}
