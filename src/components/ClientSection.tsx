@@ -23,7 +23,7 @@ export const ClientSection = () => {
             <motion.div 
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              className="flex flex-nowrap gap-16 md:gap-24 items-center whitespace-nowrap py-8"
+              className="flex flex-nowrap gap-8 md:gap-24 items-center whitespace-nowrap py-8"
             >
               {[...clients, ...clients].map((client, i) => (
                 <a 
@@ -31,7 +31,7 @@ export const ClientSection = () => {
                   href={client.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center min-w-[250px] group/item transition-transform duration-500 hover:scale-110"
+                  className="flex flex-col items-center justify-center min-w-[180px] md:min-w-[250px] group/item transition-transform duration-500 hover:scale-110"
                 >
                   <img 
                     src={client.logo} 
