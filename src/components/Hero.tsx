@@ -13,8 +13,8 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative w-full aspect-[3/4] flex items-center justify-center order-2 lg:order-1 -mt-4 lg:-mt-24 overflow-visible"
         >
-          {/* Contenedor de recortes para los gradientes infinitos */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden lg:overflow-visible">
+          {/* Contenedor de recortes para los gradientes (Expandido para ignorar padding) */}
+          <div className="absolute -inset-x-6 lg:inset-0 pointer-events-none overflow-hidden lg:overflow-visible h-[120%] lg:h-full">
             {/* Fade azul horizontal detrás del dispositivo */}
             <div className="absolute inset-y-0 -left-[100vw] right-0 bg-gradient-to-r from-brand-blue/10 via-brand-blue/5 to-transparent" />
             
