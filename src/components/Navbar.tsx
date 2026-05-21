@@ -19,7 +19,7 @@ export const Navbar = () => {
           <a href="#contact" className="hover:text-brand-blue transition-colors">Contacto</a>
         </div>
 
-        <button className="bg-brand-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20">
+        <button className="bg-brand-blue text-white px-4 py-2 rounded-full text-[13px] font-semibold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20">
           Comenzar ahora
         </button>
       </div>

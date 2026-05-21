@@ -3,8 +3,8 @@ import { ArrowRight, PlayCircle } from 'lucide-react';
 
 export const Hero = () => {
   return (
-    <section className="relative pt-20 pb-20 md:pt-32 overflow-hidden bg-white min-h-[90vh] flex items-center">
-      <div className="relative max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center z-10 -mt-16">
+    <section className="relative pt-32 pb-20 lg:pt-32 overflow-hidden bg-white min-h-[90vh] flex items-center">
+      <div className="relative max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center z-10 lg:-mt-16">
         
         {/* Lado Izquierdo: Imagen en forma personalizada */}
         <motion.div 
