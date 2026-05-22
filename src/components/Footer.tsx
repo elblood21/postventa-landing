@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Globe, Share2, X } from 'lucide-react';
+import { Mail, Phone, Globe, Share2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './Logo';
 
@@ -21,15 +21,15 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#050B14] text-gray-400 py-20 px-6 border-t border-white/5">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
-        <div className="col-span-1 md:col-span-1">
-          <div className="flex items-center mb-6">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+        <div className="col-span-1">
+          <div className="flex items-center justify-center md:justify-start mb-6">
             <Logo className="h-10 grayscale brightness-200 contrast-200" />
           </div>
-          <p className="mb-8 leading-relaxed text-sm">
+          <p className="mb-8 leading-relaxed text-sm max-w-xs mx-auto md:mx-0">
             La plataforma líder en gestión de postventa inmobiliaria en Chile. Digitalizamos la comunicación entre inmobiliarias y propietarios.
           </p>
-          <div className="flex gap-4">
+          <div className="flex justify-center md:justify-start gap-4">
             <a href="https://www.linkedin.com/company/postventa-cl/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
               <Globe size={18} />
             </a>
@@ -39,33 +39,23 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div>
-          <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Plataforma</h4>
-          <ul className="space-y-4 text-sm">
-            <li><a href="https://app.postventa.cl" className="hover:text-brand-orange transition-colors">Acceso Empresa</a></li>
-            <li><a href="https://app.postventa.cl" className="hover:text-brand-orange transition-colors">Acceso Clientes</a></li>
-            <li><a href="#features" className="hover:text-brand-orange transition-colors">Características</a></li>
-            <li><a href="https://dev.postventa.net/registro" className="hover:text-brand-orange transition-colors">Comenzar ahora</a></li>
-          </ul>
-        </div>
-
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Soporte</h4>
           <ul className="space-y-4 text-sm">
             <li>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="hover:text-brand-orange transition-colors cursor-pointer text-left"
+                className="hover:text-brand-orange transition-colors cursor-pointer text-left font-medium"
               >
                 Contáctanos
               </button>
             </li>
-            <li><a href="#" className="hover:text-brand-orange transition-colors">Centro de Ayuda</a></li>
-            <li><a href="#" className="hover:text-brand-orange transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="https://dev.postventa.net/registro" className="hover:text-brand-orange transition-colors">Comenzar ahora</a></li>
+            <li><a href="https://app.postventa.cl" className="hover:text-brand-orange transition-colors">Acceso Empresa</a></li>
           </ul>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Contacto</h4>
           <ul className="space-y-4 text-sm">
             <li className="flex items-center gap-3">
@@ -80,12 +70,6 @@ export const Footer = () => {
               </div>
               +56 9 94981050
             </li>
-            <li className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400">
-                <MapPin size={16} />
-              </div>
-              Santiago, Chile
-            </li>
           </ul>
         </div>
       </div>
@@ -94,7 +78,7 @@ export const Footer = () => {
         <p>&copy; {new Date().getFullYear()} Postventa.cl - Todos los derechos reservados.</p>
       </div>
 
-      {/* Contact Modal */}
+      {/* Contact Modal (More compact) */}
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-[2000] flex items-center justify-center px-6">
@@ -110,49 +94,49 @@ export const Footer = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-lg bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl overflow-hidden"
+              className="relative w-full max-w-md bg-white rounded-[1.5rem] p-6 md:p-8 shadow-2xl overflow-hidden"
             >
               <button 
                 onClick={() => setIsModalOpen(false)}
-                className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-900 transition-colors"
+                className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-900 transition-colors"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
 
-              <div className="mb-8">
-                <h3 className="text-3xl font-black text-brand-blue mb-2">Contáctanos</h3>
-                <p className="text-gray-500">Déjanos tu mensaje y te responderemos a la brevedad.</p>
+              <div className="mb-6">
+                <h3 className="text-2xl font-black text-brand-blue mb-1">Contáctanos</h3>
+                <p className="text-sm text-gray-500">Te responderemos a la brevedad.</p>
               </div>
 
               {formStatus === 'success' ? (
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="py-12 text-center"
+                  className="py-8 text-center"
                 >
-                  <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-500 mx-auto mb-6">
-                    <X size={32} className="rotate-45" /> {/* Check replacement */}
+                  <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mx-auto mb-4">
+                    <X size={24} className="rotate-45" />
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-2">¡Mensaje enviado!</h4>
-                  <p className="text-gray-500">Gracias por contactarnos.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-1">¡Enviado!</h4>
+                  <p className="text-sm text-gray-500">Gracias por contactarnos.</p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Nombre</label>
-                    <input required type="text" className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all" placeholder="Tu nombre..." />
+                    <label className="block text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-widest">Nombre</label>
+                    <input required type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all" placeholder="Tu nombre..." />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Email</label>
-                    <input required type="email" className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all" placeholder="tu@email.com" />
+                    <label className="block text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-widest">Email</label>
+                    <input required type="email" className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all" placeholder="tu@email.com" />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Mensaje</label>
-                    <textarea required rows={4} className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all resize-none" placeholder="¿En qué podemos ayudarte?"></textarea>
+                    <label className="block text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-widest">Mensaje</label>
+                    <textarea required rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea>
                   </div>
                   <button 
                     disabled={formStatus === 'submitting'}
-                    className="w-full py-5 bg-brand-blue text-white font-bold rounded-xl hover:bg-brand-blue/90 transition-all shadow-xl shadow-brand-blue/20 disabled:opacity-50"
+                    className="w-full py-4 bg-brand-blue text-white text-sm font-bold rounded-lg hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20 disabled:opacity-50"
                   >
                     {formStatus === 'submitting' ? 'Enviando...' : 'Enviar mensaje'}
                   </button>
