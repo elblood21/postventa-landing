@@ -23,7 +23,7 @@ const wordVariants = {
   },
 };
 
-export const CTA = () => {
+export const CTA = ({ onOpenContact }: { onOpenContact: () => void }) => {
   const title = "¿Listo para transformar tu postventa?";
   const words = title.split(" ");
 
@@ -109,14 +109,14 @@ export const CTA = () => {
           transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-6 w-full sm:w-auto"
         >
-          <a 
-            href="https://dev.postventa.net/registro"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button 
+            onClick={onOpenContact}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-brand-orange text-white font-bold rounded-full overflow-hidden w-full sm:w-auto shadow-[0_0_40px_rgba(243,112,33,0.3)]"
           >
             <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out rounded-full" />
-            <span className="relative z-10 text-lg">Agendar Demo Gratuita</span>
+            <span className="relative z-10 text-lg">Contáctanos</span>
             <motion.div
               className="relative z-10"
               initial={{ x: 0 }}
@@ -124,14 +124,6 @@ export const CTA = () => {
             >
               <ArrowRight size={20} />
             </motion.div>
-          </a>
-          
-          <motion.button 
-            whileHover={{ backgroundColor: "rgba(255,255,255,0.1)", scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 py-5 bg-transparent border border-white/20 text-white font-bold rounded-full transition-colors w-full sm:w-auto text-lg backdrop-blur-sm"
-          >
-            Hablar con Ventas
           </motion.button>
         </motion.div>
       </div>

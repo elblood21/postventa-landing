@@ -10,11 +10,12 @@ import { Preloader } from './components/Preloader';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
-    if (loading) {
+    if (loading || isContactModalOpen) {
       document.body.style.overflow = 'hidden';
-      window.scrollTo(0, 0);
+      if (loading) window.scrollTo(0, 0);
     } else {
       document.body.style.overflow = 'unset';
       document.body.style.backgroundColor = '#ffffff'; // Fallback de seguridad
@@ -23,7 +24,7 @@ function App() {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [loading]);
+  }, [loading, isContactModalOpen]);
 
   return (
     <div className={`min-h-screen bg-white selection:bg-brand-orange/30 selection:text-brand-blue ${loading ? 'h-screen overflow-hidden fixed w-full' : ''}`}>
@@ -36,9 +37,9 @@ function App() {
         <Hero />
         <ClientSection />
         <Features />
-        <CTA />
+        <CTA onOpenContact={() => setIsContactModalOpen(true)} />
       </main>
-      <Footer />
+      <Footer isModalOpen={isContactModalOpen} setIsModalOpen={setIsContactModalOpen} />
     </div>
   );
 }

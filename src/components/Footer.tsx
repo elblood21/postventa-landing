@@ -3,8 +3,12 @@ import { Mail, Phone, Globe, Share2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './Logo';
 
-export const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+interface FooterProps {
+  isModalOpen: boolean;
+  setIsModalOpen: (open: boolean) => void;
+}
+
+export const Footer = ({ isModalOpen, setIsModalOpen }: FooterProps) => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -50,8 +54,6 @@ export const Footer = () => {
                 Contáctanos
               </button>
             </li>
-            <li><a href="https://dev.postventa.net/registro" className="hover:text-brand-orange transition-colors">Comenzar ahora</a></li>
-            <li><a href="https://app.postventa.cl" className="hover:text-brand-orange transition-colors">Acceso Empresa</a></li>
           </ul>
         </div>
 
