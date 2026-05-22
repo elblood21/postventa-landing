@@ -37,12 +37,6 @@ export const Hero = () => {
 
               {/* Main Content Area */}
               <div className="flex-1 flex p-4 md:p-6 gap-4 md:gap-6 overflow-hidden">
-                {/* Sidebar */}
-                <div className="w-12 md:w-16 flex flex-col gap-2 md:gap-3 shrink-0">
-                  {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="w-full h-8 md:h-12 bg-white rounded-lg md:rounded-xl border border-gray-100 shadow-sm animate-pulse" />
-                  ))}
-                </div>
                 
                 {/* Dashboard Grid */}
                 <div className="flex-1 flex flex-col gap-4 md:gap-6">
