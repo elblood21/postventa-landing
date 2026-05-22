@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, Globe, Share2, X } from 'lucide-react';
+import { Mail, Phone, Facebook, Instagram, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './Logo';
 
@@ -34,11 +34,11 @@ export const Footer = ({ isModalOpen, setIsModalOpen }: FooterProps) => {
             La plataforma líder en gestión de postventa inmobiliaria en Chile. Digitalizamos la comunicación entre inmobiliarias y propietarios.
           </p>
           <div className="flex justify-center md:justify-start gap-4">
-            <a href="https://www.linkedin.com/company/postventa-cl/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
-              <Globe size={18} />
+            <a href="https://facebook.com/postventa.cl" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
+              <Facebook size={18} />
             </a>
-            <a href="https://www.instagram.com/postventa.cl/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-orange hover:text-white transition-all">
-              <Share2 size={18} />
+            <a href="https://instagram.com/postventa.cl" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-orange hover:text-white transition-all">
+              <Instagram size={18} />
             </a>
           </div>
         </div>

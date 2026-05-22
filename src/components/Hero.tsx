@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const Hero = () => {
   return (
@@ -117,10 +117,6 @@ export const Hero = () => {
               Comenzar ahora 
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <button className="bg-white text-[#0A1128] border border-gray-200 px-6 py-3 rounded-lg font-bold text-base hover:border-gray-300 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto shadow-sm">
-              <PlayCircle size={18} className="text-brand-orange" />
-              Ver video demo
-            </button>
           </motion.div>
         </div>
         
